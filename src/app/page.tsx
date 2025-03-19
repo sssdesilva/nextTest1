@@ -1,7 +1,9 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { FaSearch, FaStar, FaCog } from 'react-icons/fa'; // Example icons
+import { getCategoryImage } from '../lib/unsplash';
 
-export default function Home() {
+export default async function Home() {
   const categories = [
     { 
       name: "Point of Sale (POS) Systems", 
@@ -137,12 +139,30 @@ export default function Home() {
     { title: "Delivery Apps Face Increased Scrutiny Over Fees", slug: "delivery-app-fees" },
   ];
 
+  // Fetch images for each category
+  const categoriesWithImages = await Promise.all(
+    categories.map(async (category) => {
+      const imageUrl = await getCategoryImage(category.name);
+      return {
+        ...category,
+        image: imageUrl,
+      };
+    })
+  );
+
   return (
     <div className="relative min-h-screen bg-gray-100 font-sans w-full">
       {/* Background Dots - moved to the background */}
       <div className="absolute inset-0 pointer-events-none -z-10">
         {/* Replace '/background-dots.svg' with your actual background dots image */}
-        <img src="/background-dots.svg" alt="Background dots" className="w-full h-full object-cover" />
+        <Image 
+          src="/background-dots.svg" 
+          alt="Background dots" 
+          width={1920} 
+          height={1080} 
+          className="w-full h-full object-cover"
+          priority
+        />
       </div>
 
       {/* Hero Section */}
@@ -170,17 +190,20 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Explore Restaurant Technology Categories</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {categories.map((category) => (
+            {categoriesWithImages.map((category) => (
               <Link
                 key={category.slug}
                 href={`/category/${category.slug}`}
                 className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 border border-gray-200 overflow-hidden"
               >
-                <div className="relative">
-                  <img 
+                <div className="relative h-40">
+                  <Image 
                     src={category.image} 
                     alt={category.name} 
-                    className="w-full h-40 object-cover"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    className="object-cover"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-black opacity-25"></div>
                 </div>

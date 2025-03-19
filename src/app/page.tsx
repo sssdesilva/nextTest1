@@ -1,31 +1,131 @@
 import Link from 'next/link';
-import { FaSearch, FaStar, FaChartLine, FaCog } from 'react-icons/fa'; // Example icons, choose appropriate ones
+import { FaSearch, FaStar, FaCog } from 'react-icons/fa'; // Example icons
 
 export default function Home() {
   const categories = [
-    { name: "Point of Sale (POS) Systems", slug: "pos-systems", icon: <FaCog size={20} className="text-blue-500 mr-2" /> }, //Added icons
-    { name: "Online Ordering Platforms", slug: "online-ordering-platforms", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "QR Menus", slug: "qr-menus", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Kitchen Display Systems (KDS)", slug: "kitchen-display-systems", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Delivery Management Software", slug: "delivery-management-software", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Payment Processing", slug: "payment-processing", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Table Reservation Systems", slug: "table-reservation-systems", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Inventory Management", slug: "inventory-management-software", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Staff Scheduling", slug: "staff-scheduling-labor-management", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "CRM & Loyalty", slug: "crm-loyalty-programs", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "WiFi & Network", slug: "wifi-network-infrastructure", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Marketing Automation", slug: "marketing-automation", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Analytics & Reporting", slug: "analytics-reporting", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Self-Ordering", slug: "self-ordering-tablets-kiosks", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Digital Menu Boards", slug: "digital-menu-boards", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Accounting & Finance", slug: "accounting-finance", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Robotics & Automation", slug: "robotics-automation", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Security Systems", slug: "security-systems", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Sustainability", slug: "sustainability-tools", icon: <FaCog size={20} className="text-blue-500 mr-2" /> },
-    { name: "Voice Ordering", slug: "voice-ordering", icon: <FaCog size={20} className="text-blue-500 mr-2" /> }
+    { 
+      name: "Point of Sale (POS) Systems", 
+      slug: "pos-systems", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?pos,restaurant" 
+    },
+    { 
+      name: "Online Ordering Platforms", 
+      slug: "online-ordering-platforms", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?online,ordering,restaurant" 
+    },
+    { 
+      name: "QR Menus", 
+      slug: "qr-menus", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?qr,menu,restaurant" 
+    },
+    { 
+      name: "Kitchen Display Systems (KDS)", 
+      slug: "kitchen-display-systems", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?kitchen,display,restaurant" 
+    },
+    { 
+      name: "Delivery Management Software", 
+      slug: "delivery-management-software", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?delivery,restaurant" 
+    },
+    { 
+      name: "Payment Processing", 
+      slug: "payment-processing", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?payment,processing" 
+    },
+    { 
+      name: "Table Reservation Systems", 
+      slug: "table-reservation-systems", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?reservation,restaurant" 
+    },
+    { 
+      name: "Inventory Management", 
+      slug: "inventory-management-software", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?inventory,management" 
+    },
+    { 
+      name: "Staff Scheduling", 
+      slug: "staff-scheduling-labor-management", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?staff,scheduling" 
+    },
+    { 
+      name: "CRM & Loyalty", 
+      slug: "crm-loyalty-programs", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?crm,loyalty" 
+    },
+    { 
+      name: "WiFi & Network", 
+      slug: "wifi-network-infrastructure", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?wifi,network" 
+    },
+    { 
+      name: "Marketing Automation", 
+      slug: "marketing-automation", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?marketing,automation" 
+    },
+    { 
+      name: "Analytics & Reporting", 
+      slug: "analytics-reporting", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?analytics,reporting" 
+    },
+    { 
+      name: "Self-Ordering", 
+      slug: "self-ordering-tablets-kiosks", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?self,ordering,kiosk" 
+    },
+    { 
+      name: "Digital Menu Boards", 
+      slug: "digital-menu-boards", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?digital,menu,board" 
+    },
+    { 
+      name: "Accounting & Finance", 
+      slug: "accounting-finance", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?accounting,finance" 
+    },
+    { 
+      name: "Robotics & Automation", 
+      slug: "robotics-automation", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?robotics,automation" 
+    },
+    { 
+      name: "Security Systems", 
+      slug: "security-systems", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?security,restaurant" 
+    },
+    { 
+      name: "Sustainability", 
+      slug: "sustainability-tools", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?sustainability,restaurant" 
+    },
+    { 
+      name: "Voice Ordering", 
+      slug: "voice-ordering", 
+      icon: <FaCog size={20} className="text-blue-500 mr-2" />,
+      image: "https://source.unsplash.com/featured/?voice,ordering" 
+    }
   ];
 
-    const featuredReviews = [
+  const featuredReviews = [
     { title: "Top 5 POS Systems for Small Restaurants", slug: "top-pos-small-restaurants", excerpt: "We compare the best POS options...", rating: 4.5 },
     { title: "Is Online Ordering Worth the Investment?", slug: "online-ordering-roi", excerpt: "A deep dive into the costs and benefits...", rating: 4 },
     { title: "The Ultimate Guide to QR Code Menus", slug: "qr-code-menu-guide", excerpt: "Everything you need to know...", rating: 5 },
@@ -37,12 +137,16 @@ export default function Home() {
     { title: "Delivery Apps Face Increased Scrutiny Over Fees", slug: "delivery-app-fees" },
   ];
 
-
-
   return (
-    <div className="min-h-screen bg-gray-100 font-sans">
+    <div className="relative min-h-screen bg-gray-100 font-sans w-full">
+      {/* Background Dots - moved to the background */}
+      <div className="absolute inset-0 pointer-events-none -z-10">
+        {/* Replace '/background-dots.svg' with your actual background dots image */}
+        <img src="/background-dots.svg" alt="Background dots" className="w-full h-full object-cover" />
+      </div>
+
       {/* Hero Section */}
-      <div className="bg-blue-600 py-16 text-white">
+      <div className="w-full bg-blue-600 py-16 text-white">
         <div className="container mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">Revolutionize Your Restaurant with Tech</h1>
           <p className="text-xl md:text-2xl mb-8">
@@ -62,24 +166,36 @@ export default function Home() {
       </div>
 
       {/* Category Section */}
-      <div className="container mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Explore Restaurant Technology Categories</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {categories.map((category) => (
-            <Link
-              key={category.slug}
-              href={`/category/${category.slug}`}
-              className="flex items-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 border border-gray-200"
-            >
-              {category.icon}
-              <h3 className="text-lg font-semibold text-gray-700">{category.name}</h3>
-            </Link>
-          ))}
+      <div className="w-full py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Explore Restaurant Technology Categories</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {categories.map((category) => (
+              <Link
+                key={category.slug}
+                href={`/category/${category.slug}`}
+                className="block bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-200 border border-gray-200 overflow-hidden"
+              >
+                <div className="relative">
+                  <img 
+                    src={category.image} 
+                    alt={category.name} 
+                    className="w-full h-40 object-cover"
+                  />
+                  <div className="absolute inset-0 bg-black opacity-25"></div>
+                </div>
+                <div className="p-4 flex items-center">
+                  {category.icon}
+                  <h3 className="text-lg font-semibold text-gray-700">{category.name}</h3>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* Featured Reviews Section */}
-      <div className="bg-gray-50 py-12">
+      <div className="w-full bg-gray-50 py-12">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Featured Reviews</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -104,24 +220,24 @@ export default function Home() {
         </div>
       </div>
 
-
-       {/* Latest News Section */}
-      <div className="container mx-auto px-4 py-12">
-        <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Latest News & Trends</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {latestNews.map((newsItem) => (
-            <div key={newsItem.slug} className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
-              <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                <Link href={`/news/${newsItem.slug}`}>{newsItem.title}</Link>
-              </h3>
-            </div>
-          ))}
+      {/* Latest News Section */}
+      <div className="w-full py-12">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-gray-800 mb-8 text-center">Latest News & Trends</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {latestNews.map((newsItem) => (
+              <div key={newsItem.slug} className="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+                <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                  <Link href={`/news/${newsItem.slug}`}>{newsItem.title}</Link>
+                </h3>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
-
       {/* Call to Action Section */}
-       <div className="bg-blue-700 py-12 text-white">
+      <div className="w-full bg-blue-700 py-12 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">Ready to Transform Your Restaurant?</h2>
           <p className="text-xl mb-8">Explore our comprehensive reviews and find the perfect tech solutions today!</p>
@@ -132,12 +248,11 @@ export default function Home() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-6">
+      <footer className="w-full bg-gray-800 text-white py-6">
         <div className="container mx-auto px-4 text-center">
           <p>&copy; {new Date().getFullYear()} Restaurant Tech Review. All rights reserved.</p>
         </div>
       </footer>
-
     </div>
   );
 }

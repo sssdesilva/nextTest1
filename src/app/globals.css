@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --primary-contrast: #0b151e;
   --secondary-contrast: #0b151e99;
